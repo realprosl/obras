@@ -13,6 +13,7 @@ serv.use(require('./rutas/put'));
 serv.use(require('./rutas/delete'));
 serv.use(require('./rutas/post-pdf'));
 serv.use(require('./rutas/get-pdf'));
+serv.use(require('./rutas/login'));
 
 // conexion a base de datos
 const mongo = require('mongoose');
