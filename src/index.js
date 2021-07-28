@@ -23,7 +23,7 @@ mongo.connect(mongoUri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(()=> console.log('conectado a mongodb')) 
   .catch(e => console.log('error de conexión', e));
 
-
+  
 
 
 
