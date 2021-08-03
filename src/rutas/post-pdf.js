@@ -49,8 +49,8 @@ router.post('/pdf/:busqueda',(req,res)=>{
 
     let itemsTitulo=``;
     
-        for(let item in properties){
-            itemsTitulo = itemsTitulo + `<th class="item">${properties[item]}</th>`
+        for(let item of properties){
+            if(item != '_id') itemsTitulo = itemsTitulo + `<th class="item">${item}</th>`
         }
 
     const htmlTitulo = `<body>
@@ -64,9 +64,11 @@ router.post('/pdf/:busqueda',(req,res)=>{
 
     let htmlBody = body.map(obra=>{
                             let items=`<tr>`;
-                            for(let item in properties){
-
-                                items = items +`<td class="item">${obra[properties[item]]}</td>`
+                            for(let item of properties){
+                                console.log(item)
+                                if(item != '_id'){
+                                    items = items +`<td class="item">${obra[item]}</td>`
+                                }
 
                             }
                             items = items + `</tr>`;
